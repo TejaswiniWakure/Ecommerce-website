@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethnic's Wear</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding: 20px;
+           overflow-y: scroll;
+        }
+           body::-webkit-scrollbar{
+           display: none;
+       }
+        html, body{
+       height: 100%;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Heading Styles */
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Product Grid Styles */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Product Card Styles */
+        .product-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .product-card .product-info {
+            padding: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .product-card .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f76c6c;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .product-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-heading">
+            <h1>Ethnic's Wear</h1>
+        </div>
+        <div class="products">
+            <!-- Product 1 -->
+            <div class="product-card" onclick="viewProductDetails('SuperLaxmi', 'cat1_image2.jpg', 'Woven, Temple Border Narayanpet Cotton Silk Saree (Green)', 565, ['Name: Silk Saree','Fabric: Cotton Silk','Blouse: Running blouse','Blouse pattern: Same as border ','Pattern: Temple Border','Occasion:Festive','Type: Ethnic', 'Net Quantity: 1', 'Fabric Care: Machine Wash'])">
+                <img src="cat1_image2.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3>SuperLaxmi</h3>
+                    <p>Woven, Temple Border Narayanpet Cotton Silk Saree (Green)</p>
+                    <p class="price">₹565</p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" onclick="viewProductDetails('Karyavar', 'cat1_image1.jpg', 'Floral Print Bollywood Lycra Blend Saree (Dark Blue)', 599, ['Name: Western Frock','Fabric: Lycra Blend', 'Pattern: Floral Print', 'Type: Bollywood','Occasion: Party', 'Net Quantity: 1', 'Fabric Care: Dry Clean Only'])">
+                <img src="cat1_image1.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3>Karyavar</h3>
+                    <p>Floral Print Bollywood Lycra Blend Saree (Dark Blue)</p>
+                    <p class="price">₹599</p>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" onclick="viewProductDetails('PURVAJA', 'cat1_image3.jpg', 'Solid, Embellished Semi Stitched Lehenga Choli (Violet)', 779, ['Name: Lehenga','Fabric: Silk', 'Pattern: Embellished','Occasion:Festive & Weddings','Type: Lehenga Choli', 'Net Quantity: 1', 'Fabric Care: Dry Clean Only'])">
+                <img src="cat1_image3.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3>PURVAJA</h3>
+                    <p>Solid, Embellished Semi Stitched Lehenga Choli (Violet)</p>
+                    <p class="price">₹779</p>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card" onclick="viewProductDetails('ZWERLON', 'cat1_image5.jpg', 'Women Dyed A-line Red Skirt', 599, ['Name: Skirt','Fabric: Cotton', 'Pattern: Dyed','Occasion: Festive & Party','Type: A-line Skirt', 'Net Quantity: 1', 'Fabric Care: Machine Wash'])">
+                <img src="cat1_image5.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3>ZWERLON</h3>
+                    <p>Women Dyed A-line Red Skirt</p>
+                    <p class="price">₹599</p>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card" onclick="viewProductDetails('Taavi', 'cat1_image6.jpg', 'Women A-line Blue Dress', 399, ['Name: Frock','Fabric: Polyester', 'Pattern: A-line','Ocassion: Casual', 'Type: Dress', 'Net Quantity: 1', 'Fabric Care: Machine Wash'])">
+                <img src="cat1_image6.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3>Taavi</h3>
+                    <p>Women A-line Blue Dress</p>
+                    <p class="price">₹399</p>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card" onclick="viewProductDetails('Veirdo', 'cat1_image7.jpg','Oversize Women Printed, Typography Round Neck Pure Cotton Beige T-Shirt', 309, ['Name: T-shirt','Fabric: Pure Cotton','Sleeve: Half','Pattern: N/A','Fit: Oversized','Ocassion: Party','Type: Casual', 'Net Quantity: 1', 'Fabric Care: Cold Water Wash Only'])">
+                <img src="cat1_image7.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3>Veirdo</h3>
+                    <p>Oversize Women Printed, Typography Round Neck Pure Cotton Beige T-Shirt</p>
+                    <p class="price">₹309</p>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card" onclick="viewProductDetails('Glowworld','cat1_image8.jpg','Women Printed Viscose Rayon Straight Kurta (Grey)', 499, ['Name: Kurti','Sleeve length: Calf Length', 'Fabric: Viscose Rayon', 'Pattern: Printed', 'Type: Straight','Occasion:Festive & Party','Net Quantity: 1', 'Fabric Care: Hand Wash'])">
+                <img src="cat1_image8.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3>Glowworld</h3>
+                    <p>Women Printed Viscose Rayon Straight Kurta (Grey)</p>
+                    <p class="price">₹499</p>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card" onclick="viewProductDetails('Klosia', 'cat1_image9.jpg', 'Women Pure Cotton Kurta Pant Dupatta Set', 699, ['Name: Kurta Pant Dupatta Set','Fabric: Mixed Fabric', 'Pattern: Printed', 'Type: Kurta,Pyjama and Dupatta set','Top type: Kurta','Bottom type: Pant','Ocassion: Festive','Net Quantity: 1', 'Fabric Care: Do not Bleach, Dry In Shade'])">
+                <img src="cat1_image9.jpg" alt="Product Image">
+                <div class="product-info">
+                    <h3>Klosia</h3>
+                    <p>Women Pure Cotton Kurta Pant Dupatta Set</p>
+                    <p class="price">₹699</p>
+                </div>
+            </div>
+             <script>
+        function viewProductDetails(name, imageUrl, description, price, features) {
+            const params = new URLSearchParams({
+                name: name,
+                imageUrl: imageUrl,
+                description: description,
+                price: price,
+                features: JSON.stringify(features)
+            });
+            window.location.href = 'product-details.html?' + params.toString();
+        }
+    </script>
+</body>
+</html>

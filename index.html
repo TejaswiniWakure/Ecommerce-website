@@ -1,0 +1,469 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        /* Common Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+           overflow-y: scroll;
+        }
+           body::-webkit-scrollbar{
+           display: none;
+       }
+        html, body{
+       height: 100%;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+           min-height: 100%;
+           display: flex;
+           flex-direction: column;
+        }
+
+        .navbar {
+            background: linear-gradient(90deg, #000000, #434343);;
+            color: #fff;
+            padding: 8px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: -10px;
+           
+        }
+
+        .navbar .logo {
+            color: #fff;
+            font-size: 22px;
+            position: absolute;
+            left: 90px;
+            top: 22px;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .nav-links li {
+            margin: 0 10px;
+        }
+
+        .navbar .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: background-color 0.3s, color 0.3s;
+            position: relative;
+        }
+        .navbar .nav-links a:before {	
+            content: '';
+   	 position: absolute;
+         bottom: -2px;
+    	 left: 0;
+   	 width: 100%;
+    	 height: 2px;
+    	background-color: #fff;
+    	transform: scaleX(0);
+    	transform-origin: bottom left;
+    	transition: transform 0.3s ease;
+}
+
+	.navbar .nav-links a:hover:before {
+    	    transform: scaleX(1);
+            transform-origin: bottom right;
+}
+        .navbar .search-icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .navbar input[type="text"] {
+            padding: 5px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 3px;
+        }
+        .navbar .trolley-icon {
+            font-size: 20px;
+            margin-right: 10px;
+}
+        /* Specific Styles */
+        .sliders {
+            padding: 20px 0;
+            overflow: hidden;
+        }
+
+        .slider {
+            position: relative;
+            width: 100%;
+            max-height: 500px;
+        }
+
+        .slider img {
+            width: 100%;
+            display: none;
+        }
+
+        .slider img.active {
+            display: block;
+        }
+
+        .shop-by-category, .latest-products, .features, .extra-content {
+            padding: 10px 0;
+            margin-right: 10px;
+        }
+
+        .shop-by-category h2, .latest-products h2, .features h2, .extra-content h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(90deg, #770456, #5c3a2d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: color 0.3s ease, font-size 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .categories, .products, .feature {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .category .feature {
+            background: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            flex: 1 1 calc(25% - 20px);
+            margin: 20px;
+            box-sizing: border-box;
+        }
+
+        .category img {
+            width: 240px;
+            height: 80%;
+        }
+        .category p{
+           text-align: center;
+       }
+
+        .category a, .product a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+               .product p{
+            margin-left: 10px;  
+        }
+
+        .footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+       .products {
+            display: flex;
+    	    justify-content: space-around; /* Adjust as needed */
+   	    align-items: flex-start; /* Adjust as needed */
+            flex-wrap: wrap;
+}
+
+.product {
+    width: 30%;
+    margin-bottom: 30px; /* Adjust spacing between products */
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.product:hover img {
+    transform: scale(1.1);
+}
+
+.product .product-details {
+    padding: 15px;
+    background-color: #fff;
+}
+
+.product p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.product strong {
+    font-size: 16px;
+    color: #333;
+}
+        .quick-links {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            background: #f4f4f4;
+            margin-left: -10px;
+        }
+
+        .quick-links div {
+            flex: 1;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .quick-links h3 {
+            margin-bottom: 10px;
+        }
+
+        .quick-links a {
+            color: #007bff;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .quick-links a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icon {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-icon a {
+            color: #333;
+            text-decoration: none;
+            font-size: 15px;
+            margin: 0 10px;
+        }
+
+        .social-icon a:hover {
+            color: #007bff;
+        }
+#scrollToTopBtn
+{
+position: fixed;
+bottom: 20px;
+right: 20px;
+display: none;
+background-color: #333;
+color: #fff;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+boredr-radius: 5px;
+transition: opacity 0.3s ease;
+}
+#scrollToTopBtn:hover
+{
+opacity: 0.7;
+}
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img src="fashion.jpg" alt="Fashion" style="width: 80px;">
+        <a href="#" class="logo" onclick="scrollToSection('logo')">Girlz Fashion</a>
+        <ul class="nav-links">
+            <li><a onclick="scrollToSection('home')">Home</a></li>
+            <li><a onclick="scrollToSection('shop-by-category')">Category</a></li>
+            <li><a onclick="scrollToSection('latest-products')">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="features.html">Features</a></li>
+         <li>
+                <a class="trolley-icon" href="#">
+                    <img src="trolley_image.jpg" alt="Trolley Emoji" style="width: 30px;">
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Sliders -->
+    <section class="sliders" id="home">
+        <div class="container">
+            <div class="slider">
+                <img src="slider1.jpg" alt="Slider 1" class="active">
+                <img src="slider2.jpg" alt="Slider 2">
+                <img src="slider3.jpg" alt="Slider 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop by Category -->
+    <section class="shop-by-category" id="shop-by-category">
+        <div class="container">
+            <h2>Shop by Category</h2>
+            <div class="categories">
+                <div class="category">
+                    <a href="category1.html">
+                        <img src="category1.jpg" alt="Category 1">
+                        <p><strong>Dresses</strong></p>
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="category2.html">
+                        <img src="category2.jpg" alt="Category 2">
+                        <p><strong>Makeup</strong></p>
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="category3.html">
+                        <img src="category3.jpg" alt="Category 3">
+                        <p><strong>Footwears</strong></p>
+                    </a>
+                </div>
+                <div class="category">
+                    <a href="category4.html">
+                        <img src="category4.jpg" alt="Category 4">
+                        <p><strong>Accessories & Jewellery</strong></p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Products -->
+    <section class="latest-products" id="latest-products">
+        <div class="container">
+            <h2>Latest Products</h2>
+            <div class="products" id="productList">
+                <div class="product" onclick="viewProductDetails('KOTTY', 'product1.jpg', 'Women Regular Fit Pink Viscose Rayon Trousers', 390, ['Fit: Regular Fit','Occasion: Casual','Color: Pink','Pack of: 1','Type: Casual Trousers','Suitable For: Western Wear','Belt Loops: Yes','Rise: High','Pattern: Solid','Fabric: Viscose Rayon','Closure: Button','Pleats :Flat Front','Fabric Care: Gentle Machine Wash','Fabric Details: 98% Polyster & 2%Lycra','Net Quantity: 1'])">
+            <img src="product1.jpg" alt="Category 1 Image 1">
+            <p><strong>KOTTY</strong><br>Women Regular Fit Pink Viscose Rayon Trousers<br>₹565</p>
+                </div>
+                <div class="product" onclick="viewProductDetails('CAMPUS', 'product2.jpg', 'CAMP-BLING Walking Shoes For Women  (Purple)', 435, ['Color: Purple','Outer material: Mesh','Model name: CAMP-BLING','Occasion: Sports','Type For Sports: Walking Shoes','Net Quantity: 1','Sole material: TPU','Closure: Lace-Ups','Weight: 350 g (per single Shoe)Weight of the product may vary depending on size','Upper Pattern: Solid'])">
+            <img src="product2.jpg" alt="Category 1 Image 1">
+            <p><strong>CAMPUS</strong><br>CAMP-BLING Walking Shoes For Women  (Purple)<br>₹435</p>
+        </div>
+                 
+                <div class="product" onclick="viewProductDetails('FACEWASH', 'product3.jpg', 'Mamaearth Sunscreen - SPF 50 PA+++ Daily Glow with Vitamin C & Turmeric for Sun Protection  (50 g)', 275, ['Quantity: 50 g','PA Rating: PA+++','Skin Type: All Skin Types','SPF Rating: 50','Formulation: Cream'])">
+            <img src="product3.jpg" alt="Category 1 Image 1">
+            <p><strong>FACEWASH</strong><br>Mamaearth Sunscreen - SPF 50 PA+++ Daily Glow Vitamin C & Turmeric for Sun Protection  (50 g)<br>₹275</p>
+        </div>
+  
+        </div>
+    </section>
+
+    <!-- Extra Content -->
+    <section class="extra-content">
+        <div class="container">
+            <div class="quick-links">
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="about.html">About</a>
+                    <a href="features.html">Features</a>
+                    <a href="#">Offers & Discounts</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <div>
+                    <h3>New Products</h3>
+                    <a href="category1.html">Woman Cloth</a>
+                    <a href="category2.html">Makeup</a>
+                    <a href="category3.html">FootWear</a>
+                    <a href="category4.html">Accessories</a>
+                </div>
+                <div>
+                    <h3>Support</h3>
+                    <a href="#">Frequently Asked Questions</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Report a Payment Issue</a>
+                </div>
+            </div>
+            <div class="social-icon">
+                <a href="#"><img src="telegram.png" alt="Telegram"></a>
+                <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </section>
+<button id="scrollToTopBtn">Scroll to Top</button>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Girlz Fashion.</p>
+        </div>
+    </footer>
+    <script>
+        // Scroll to Top Button
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        scrollToTopBtn.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Image Slider
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slider img');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 3000);
+
+        // Function to scroll to sections
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function viewProductDetails(name, imageUrl, description, price, features) {
+            const params = new URLSearchParams({
+                name: name,
+                imageUrl: imageUrl,
+                description: description,
+                price: price,
+                features: JSON.stringify(features)
+            });
+            window.location.href = 'product-details.html?' + params.toString();
+        }
+</script>
+</body>
+</html>
+

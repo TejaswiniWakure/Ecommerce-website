@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dresses</title>
+    <style>
+ /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding: 20px;
+            overflow-y: scroll;
+        }
+           body::-webkit-scrollbar{
+           display: none;
+       }
+        html, body{
+       height: 100%;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Heading Styles */
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Product Grid Styles */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Product Card Styles */
+        .product-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .product-card .product-info {
+            padding: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .product-card .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f76c6c;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .product-card {
+             max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+        <div class="section-heading">
+        <h1>Jewellery & Accessories </h1>
+    </div>
+    <div class="products">
+        <div class="product-card" onclick="viewProductDetails('LaFille', 'cat4_image1.jpg', 'Women White Hand-held Bag', 856,['Model: Women Handbag','Number of Compartments: 3','Water Resistant: No','Bag Design: Solid','Material: PU','Number of Pockets: 2','Width: 28 cm','Height: 30 cm','Depth: 11 cm','Weight: 450 g','Closure: Zip','Pack of: 1','Color: White','Net quantity: 1'])">
+            <img src="cat4_image1.jpg" alt="Category 1 Image 1">
+            <div class="product-info">
+                    <h3>LaFille</h3>
+                    <p>Women White Hand-held Bag</p>
+                    <p class="price">₹856</p>
+                </div>
+        </div>
+        <div class="product-card" onclick="viewProductDetails('Sukkhi', 'cat4_image2.jpg', 'Alloy Gold-plated White Jewel Set  (Pack of 4))', 389, ['Base Material: Alloy','Color: White','Type: Necklace,Earring & Maang Tikka Set','Plating: Gold-plated','Net Quantity: 4','Sales Package: 1 Necklace, 1 Pair of Earring, 1 Maangtikka','Collection: Ethnic','Occasion: Wedding & Engagement','Finish: Glossy','Chain/Necklace Length: 7.9','Weight: 80 g','Diamond Weight: 0.01 carat'])">
+            <img src="cat4_image2.jpg" alt="Category 1 Image 2">
+            <div class="product-info">
+                    <h3>Sukkhi</h3>
+                    <p>Alloy Gold-plated White Jewel Set  (Pack of 4)</p>
+                    <p class="price">₹389</p>
+                </div>
+        </div>
+        <div class="product-card" onclick="viewProductDetails('DAREBYGOLDENERA', 'cat4_image3.jpg', 'Shell Pearl Gold-plated Bracelet', 200, ['Model Name: purple uncur','Model Number: pearl pink heart chain bracelet','Ideal For: Girls','Type: Bracelet','Color:White','Base Material: Shell','Bangle Size: Free','Gemstone: Pearl','Pack of: 1','Occasion: Everyday','Net Quantity: 1','Plating: Gold-plated'])">
+            <img src="cat4_image3.jpg" alt="Category 1 Image 3">
+<div class="product-info">
+                    <h3>DAREBYGOLDENERA</h3>
+                    <p>Shell Pearl Gold-plated Bracelet</p>
+                    <p class="price">₹200</p>
+                </div>
+        </div>
+        <div class="product-card" onclick="viewProductDetails('Alasca', 'cat4_image4.jpg', 'Pack of 1 Gold Drop & Danglers Earring for Women & Girls Diamond Brass Chandbali Earring','199',['Base Material: Brass','Plating: Gold-plated','Gemstone: Diamond','Color: Gold,White','Model Number: 0000 - ER - Botad Mendi gold Lambgol',' Pack of: 1 ','Model name: Gold Drop & Danglers Earring for Women & Girls','Type :Chandbali Earring','Collection: Ethnic','Certification: Brand Certification','Occasion: Love, Religious, Wedding & Engagement','Design: Heavy','Finish: Gold Plated, Heavy Polished Stone','Earring Back Type: Push Back','Piercing Required: No','Natural/Synthetic Semi-precious Stone: Synthetic','Semi-precious Stone Type: Kundan','Silver Weight: 8.7 g','Silver Color: White'])">
+            <img src="cat4_image4.jpg" alt="Category 1 Image 4">
+<div class="product-info">
+                    <h3>Alasca</h3>
+                    <p>Pack of 1 Gold Drop & Danglers Earring for Women & Girls Diamond Brass Chandbali Earring</p>
+                    <p class="price">₹199</p>
+                </div>
+        </div>
+        <div class="product-card" onclick="viewProductDetails('Brado jewellery', 'cat4_image5.jpg', 'Gold Plated White And Black American Diamond And One Love Heart Pendant With Satari Chain Combo Of 3 Necklace Golden Chain Pendant for Women and Girls. Gold-plated Plated Brass Chain','209',['Sales Package: Pack of 3 Pendant with 3 Chain','Pack of: 3','Brand: brado jewellery','Color: Gold','Model Name: Gold Plated White And Black American Diamond And One Love Heart Pendant With Satari Chain Combo Of 3 Necklace Golden Chain Pendant for Women and Girls','Type: Chain','Collection: Ethnic','Occasion: Everyday,Workwear, Wedding & Engagement, Religious, Love, Party','Net Quantity: 3','Base material: Brass','Plating: Gold-plated','Necklace type: princess Necklace','Chain type: Rope','Clasp type: Fish Hook','Finish: Gold','Natural Synthetic Diamond: Synthetic','Diamond Shape: Round','Pearl type: Cultured','Certification: IGI','Other features: Daily wear, Wedding wear','Chain/Necklace Length: 18 inch','Weight: 60 g'] )">
+            <img src="cat4_image5.jpg" alt="Category 1 Image 5">
+<div class="product-info">
+                    <h3>Brado jewellery</h3>
+                    <p>Gold Plated White And Black American Diamond And One Love Heart Pendant With Satari Chain Combo Of 3 Necklace Golden Chain Pendant for Women and Girls. Gold-plated Plated Brass Chain</p>
+                    <p class="price">₹209</p>
+                </div>
+        </div>
+       <div class="product-card" onclick="viewProductDetails('G M W', 'cat4_image6.jpg', 'Casual, Formal, Party, Sports Pink Clutch','299',['Model Name: Fashionable unique fancy hand crafted cultch hand mobile hand purse hand wallets','Type: Women fasnibole fancy Hand cultches hand wellats','Size in Number: 8.5 inch','Number of Card Slots: 4 all kinds of Card slot','Closure: Magnetic button','Pattern: Two folder hand clutch','Sales Package: 1','Other Features: 3 zipper pocket 4 all kinds of Card slot','Material: Artificial Leather','Number of Compartments: 7','Color: Pink','Net Quantity: 1','Width: 9.5 cm','Height: 10.1 cm','Weight: 0.2 g'] )">
+            <img src="cat4_image6.jpg" alt="Category 1 Image 6">
+<div class="product-info">
+                    <h3>G M W</h3>
+                    <p>Casual, Formal, Party, Sports Pink Clutch</p>
+                    <p class="price">₹299</p>
+                </div>
+        </div>
+        <div class="product-card" onclick="viewProductDetails('Polluxcraft','cat4_image7.jpg','PolluxCraft Korean Earrings for Women and Girl /White and Pink Earring 01-Pair Pearl Alloy Stud Earring, Clip-on Earring',149, ['Base Material:Alloy','Plating: Gold-plated','Gemstone: Pearl','Color: Gold,Pink','Occasion: Everyday, Love, Religious, Wedding & Engagement','Design: Statement,Minimal','Finish: Glaze','Earring Back Type: Push Back','Artificial Pearl Material: Plastic','Width: 25 mm','Height: 20 mm','Weight: 10 g'])">
+            <img src="cat4_image7.jpg" alt="Category 1 Image 7">
+<div class="product-info">
+                    <h3>Polluxcraft</h3>
+                    <p>PolluxCraft Korean Earrings for Women and Girl /White and Pink Earring 01-Pair Pearl Alloy Stud Earring, Clip-on Earring</p>
+                    <p class="price">₹149</p>
+                </div>
+        </div>
+        <div class="product-card" onclick="viewProductDetails('brado jewellery', 'cat4_image8.jpg','Brass Brass Rose Gold,Green Jewel Set ',206, ['Base Material: Brass','Color: Rose Gold, Green','Type: Earring & Necklace Set','Plating: Brass','Gemstone: Diamond','Certification: Brand Certification','Net Quantity: 2','Sales Package: 1 choker with 1 pair of earring','Collection: Ethnic','Occasion: Wedding & Engagement, Religious, Love','Semi-precious Stone Shape: Round','Natural/Synthetic Semi-precious Stone: Synthetic','Finish: Rose Gold Plated Green and White Heavy Polished Stone, Used 2 type of stone','Chain/Necklace Length: 8','Weight: 40 g'])">
+            <img src="cat4_image8.jpg" alt="Category 1 Image 6">
+<div class="product-info">
+                    <h3>brado jewellery</h3>
+                    <p>Brass Brass Rose Gold,Green Jewel Set</p>
+                    <p class="price">₹206</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+ function viewProductDetails(name, imageUrl, description, price, features) {
+            const params = new URLSearchParams({
+                name: name,
+                imageUrl: imageUrl,
+                description: description,
+                price: price,
+                features: JSON.stringify(features)
+            });
+            window.location.href = 'product-details.html?' + params.toString();
+        }
+
+          </script>
+
+</body>
+</html>

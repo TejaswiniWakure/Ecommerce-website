@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dresses</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding: 20px;
+           overflow-y: scroll;
+        }
+           body::-webkit-scrollbar{
+           display: none;
+       }
+        html, body{
+       height: 100%;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Heading Styles */
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Product Grid Styles */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Product Card Styles */
+        .product-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .product-card .product-info {
+            padding: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .product-card .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f76c6c;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .product-card {
+             max-width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-heading">
+        <h1>FootWears</h1>
+    </div>
+    <div class="products">
+        <div class="product-card" onclick="viewProductDetails('Allen Solly ','cat3_image1.jpg', 'Women Yellow Flats Sandals', 959, ['Type: Flats','Type for Heels: Block Heel','Color: Yellow','Sole Material: Rubber'])">
+            <img src="cat3_image1.jpg" alt="Category 1 Image 1">
+                   <div class="product-info">
+                    <h3>Allen Solly</h3>
+                    <p>Women Yellow Flats Sandals</p>
+                    <p class="price">₹959</p>
+                </div>
+</div>
+        <div class="product-card" onclick="viewProductDetails('Shoestail', 'cat3_image2.jpg', 'Women Pink Flats Sandal', 239, ['Type: Flats','Secondary Color: Beige','Leather Type: Napa','Upper Pattern: Embroidered','Closure: Slip On','Type for Flats: Slide Sandal','Color: Pink','Net Quantity: 2','Tanning Process: Synthetic','Removable Insole: No','Pack of: 2','Sole Material: TPR Sole'])">
+            <img src="cat3_image2.jpg" alt="Category 1 Image 2">
+           <div class="product-info">
+                    <h3>Shoestail</h3>
+                    <p>Women Pink Flats Sandal</p>
+                    <p class="price">₹239</p>
+                </div>
+</div>
+        <div class="product-card" onclick="viewProductDetails('Vokline', 'cat3_image3.jpg', 'Walking Shoes For Women  (Purple)', 309, ['Type: Flats','Outer Material: Canvas','Closure: Slip On','Type for Sports: Walking Shoes','Color: Purple','Net Quantity: 1','Pack of: 1','Sole Material: PVC'])">
+            <img src="cat3_image3.jpg" alt="Category 1 Image 3">
+                      <div class="product-info">
+                    <h3>Vokline</h3>
+                    <p>Walking Shoes For Women  (Purple)</p>
+                    <p class="price">₹309</p>
+                </div>
+</div>
+        <div class="product-card" onclick="viewProductDetails('TRASE', 'cat3_image4.jpg', 'Women Off White Heels Sandal','629',['Type: Heels','Heels Pattern: Solid','Upper Pattern: Solid','Closure: Slip On','Type for Heels: Block Heels','Type of Flats: Sandels','Color: Off White','Net Quantity: 1','Tanning Process: Synthetic','Removable Insole: No','Pack of: 1','Sole Material: Tunit'])">
+            <img src="cat3_image4.jpg" alt="Category 1 Image 4">
+             <div class="product-info">
+                    <h3>TRASE</h3>
+                    <p>Women Off White Heels Sandal</p>
+                    <p class="price">₹629</p>
+                </div>
+</div>
+
+        <div class="product-card" onclick="viewProductDetails('Deals4you','cat3_image5.jpg','Sneakers For Women (Multicolor)','509',['Type: Sneakers','Type for Shoes: Running Shoes','Outer Material: Synthetic','Color: White','Net Quantity: 1','Pack of: 1'] )">
+            <img src="cat3_image5.jpg" alt="Category 1 Image 5">
+                    <div class="product-info">
+                    <h3>Deals4you</h3>
+                    <p>Sneakers For Women (Multicolor)</p>
+                    <p class="price">₹509</p>
+                </div>
+</div>
+        <div class="product-card" onclick="viewProductDetails('Denill', 'cat3_image6.jpg','Women Brown Heels Sandal', 189, ['Type: Heels','Type for Heels: Block Heels','Color: Brown','Net Quantity: 1','Pack of: 1'])">
+            <img src="cat3_image6.jpg" alt="Category 1 Image 6">
+             <div class="product-info">
+                    <h3>Denill</h3>
+                    <p>Women Brown Heels Sandal</p>
+                    <p class="price">₹189</p>
+                </div>
+</div>
+        <div class="product-card" onclick="viewProductDetails('SELFIEE','cat3_image7.jpg','Women Red Heels Sandal',538, ['Type: Heels','Heels Pattern: Solid','Type for Heels: Pencil Heels','Type of Flats: Sandels','Color: Red','Net Quantity: 1','Removable Insole: No','Pack of: 1','Sole Material: TPR','Insole material: Soft Foam'])">
+            <img src="cat3_image7.jpg" alt="Category 1 Image 7">
+                    <div class="product-info">
+                    <h3>SELFIEE</h3>
+                    <p>Women Red Heels Sandal</p>
+                    <p class="price">₹538</p>
+  </div>
+</div>    
+    <div class="product-card" onclick="viewProductDetails('MYRA','cat3_image8.jpg','Swarovski Embellished Patch-work Bellies For Women (Maroon)',299,['Color: Maroon','Inner material: Synthetic','Outer material: Suede','Type for casual: Bellies','Type for ethnic: Mojaris','Upper Pattern: Embellished, Patchwork','Closure: Slip On','Net Quantity: 1','Pack of: 1','Sole Material: TPR'])">
+            <img src="cat3_image8.jpg" alt="Category 1 Image 6">
+           <div class="product-info">
+                    <h3>MYRA</h3>
+                    <p>Swarovski Embellished Patch-work Bellies For Women (Maroon)</p>
+                    <p class="price">₹299</p>
+  </div>
+</div>    
+        </div>
+    </div>
+    <script>
+ function viewProductDetails(name, imageUrl, description, price, features) {
+            const params = new URLSearchParams({
+                name: name,
+                imageUrl: imageUrl,
+                description: description,
+                price: price,
+                features: JSON.stringify(features)
+            });
+            window.location.href = 'product-details.html?' + params.toString();
+        }
+
+          </script>
+</body>
+</html>

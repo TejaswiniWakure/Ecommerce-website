@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethnic's Wear</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding: 20px;
+           overflow-y: scroll;
+        }
+           body::-webkit-scrollbar{
+           display: none;
+       }
+        html, body{
+       height: 100%;
+        }
+
+        /* Container Styles */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Section Heading Styles */
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* Product Grid Styles */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Product Card Styles */
+        .product-card {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .product-card .product-info {
+            padding: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .product-card .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f76c6c;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .product-card {
+             max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-heading">
+            <h1>Makeup</h1>
+        </div>
+        <div class="products">
+           <!-- Product 1 -->
+            <div class="product-card" onclick="viewProductDetails('EyeShadow', 'cat2_image1.jpg', 'Huda Girl Beauty Nude Edition 18 Color Eyeshadow and Rose Gold Edition 18 Color Matte and Shiny Pigmented Beauty Eyeshadow Palette Combo Pack 20 g  (Multicolor)', 165, ['Brand: Huda Girl','Shade: Multicolor','Organic: Yes','Waterproof: Yes','Finish: Shimmer','Form: Compressed Powder','Container Type: Palette Case','Net Quantity: 20g'])">
+                <img src="cat2_image1.jpg" alt="Category 1 Image 1">
+                <div class="product-info">
+                    <h3>EyeShadow</h3>
+                    <p>Huda Girl Beauty Nude Edition 18 Color Eyeshadow and Rose Gold Edition 18 Color Matte and Shiny Pigmented Beauty Eyeshadow Palette Combo Pack 20 g  (Multicolor)</p>
+                    <p class="price">₹165</p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card" onclick="viewProductDetails('Lip Balm', 'cat2_image2.jpg', 'Dot & Key Rose Blush Tinted Lip Balm with SPF 30 Floral  (Pack of: 1, 12 g)', 199, ['Brand: Dot & Key','Color: Pink','Flavor: Floral','Other Traits: -Deeply moisturises dry lips, -Fades lip pigmentation, -Controls lip tanning, -Provides non-stop shine, -Lightweight & non-sticky','Maximum Shelf Life: 36 Months','Container Type: Tube','Net Quantity: 12g'])">
+                <img src="cat2_image2.jpg" alt="Category 1 Image 2">
+                <div class="product-info">
+                    <h3>Lip Balm</h3>
+                    <p>Dot & Key Rose Blush Tinted Lip Balm with SPF 30 Floral  (Pack of: 1, 12 g)</p>
+                    <p class="price">₹199</p>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card" onclick="viewProductDetails('Lip Stick', 'cat2_image3.jpg', 'Lakmé 9TO5 Primer + Matte Lip Color Scarlet Surge  (Scarlet Surge,
+<!-- Product 3 -->
+            <div class="product-card" onclick="viewProductDetails('Lip Stick', 'cat2_image3.jpg', 'Lakmé 9TO5 Primer + Matte Lip Color Scarlet Surge  (Scarlet Surge, 3.6 g)', 460, ['Brand: Lakme','Color: Pink','Skin-Tone: Light/Dusky', 'Composition: Phenyl Triemthicone; Polyethylene; Dimethicone','Form: Cream','Finish: Matte','Maximum Shelf Life: N/A','Net Quantity: 3.6g'])">
+                <img src="cat2_image3.jpg" alt="Category 1 Image 3">
+                <div class="product-info">
+                    <h3>Lip Stick</h3>
+                    <p>Lakmé 9TO5 Primer + Matte Lip Color Scarlet Surge  (Scarlet Surge, 3.6 g)</p>
+                    <p class="price">₹460</p>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card" onclick="viewProductDetails('Mascara', 'cat2_image4.jpg', 'MAYBELLINE NEW YORK Hypercurl Waterproof Mascara, Longlasting, Curls Lashes, Highly Pigmented Colour 9.2 ml  (Black)', 407, ['Brand: Maybelline New York','Color: Black,Pink','WaterProof: Yes','Type: Volumising Mascara','Brush Features: Instant C curl Effect','Maximum Shelf Life: 36 Months','Container Type: Tube','Net Quantity: 9.2ml'])">
+                <img src="cat2_image4.jpg" alt="Category 1 Image 4">
+                <div class="product-info">
+                    <h3>Mascara</h3>
+                    <p>MAYBELLINE NEW YORK Hypercurl Waterproof Mascara, Longlasting, Curls Lashes, Highly Pigmented Colour 9.2 ml  (Black)</p>
+                    <p class="price">₹407</p>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card" onclick="viewProductDetails('Compact Powder', 'icat2_image5.jpg', 'MAYBELLINE NEW YORK Fit Me Matte + Poreless Powder|16H Oil Control with SPF 32 +++ Compact  (Shade 115, 6 g)', 169, ['Brand: Maybelline New York','Color: Skin','Texture: Pressed Powder','Finish: Matte','Shade: Shade 115','Skin Tone: Fair','Maximum Shelf Life: 36 Months','Net Quantity: 6g'])">
+                <img src="cat2_image5.jpg" alt="Category 1 Image 5">
+                <div class="product-info">
+                    <h3>Compact Powder</h3>
+                    <p>MAYBELLINE NEW YORK Fit Me Matte + Poreless Powder|16H Oil Control with SPF 32 +++ Compact  (Shade 115, 6 g)</p>
+                    <p class="price">₹169</p>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card" onclick="viewProductDetails('EyeLiner', 'cat2_image6.jpg', 'GOGRAIN longlasting waterproof black eyeliner pencil 20 g  (Black)', 189, ['Brand: 36H','Color: Black','Organic: No','Form: Liquid','Tip Type: Pencil','WaterProof: Yes','Maximum Shelf Life: 36 Months','Net Quantity: 20g'])">
+                <img src="cat2_image6.jpg" alt="Category 1 Image 6">
+                <div class="product-info">
+                    <h3>EyeLiner</h3>
+                    <p>GOGRAIN longlasting waterproof black eyeliner pencil 20 g  (Black)</p>
+                    <p class="price">₹189</p>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card" onclick="viewProductDetails('Foundation', 'cat2_image7.jpg', 'MAYBELLINE NEW YORK Fit Me Matte+Poreless Liquid Foundation (With Pump & SPF 22) Foundation  (118 Light Beige, 30 ml)', 499, ['Brand: Maybelline New York','Organic Type: Synthetic','Skin Tone: Fair','WaterProof: Yes','Finish: Matte','Application Area: Face','Container Type: Bottle','Shade: 118 Light Beige','Maximum Shelf Life: 36 Months','Net Quantity: 30ml'])">
+                <img src="cat2_image7.jpg" alt="Category 1 Image 7">
+                <div class="product-info">
+                    <h3>Foundation</h3>
+                    <p>MAYBELLINE NEW YORK Fit Me Matte+Poreless Liquid Foundation (With Pump & SPF 22) Foundation  (118 Light Beige, 30 ml)</p>
+                    <p class="price">₹499</p>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card" onclick="viewProductDetails('Makeup Brushes', 'cat2_image8.jpg', 'Real Techniques Everyday Essentials Makeup Brush Set (Set Of 5)  (Pack of 5)', 283, ['Brush Type: Foundation Brush','Pack of: 5','Color: Multicolor','Applicator Feature: Hand cut hair design allows for even and streak free application of makeup','Net Quantity: 5 Pieces'])">
+                <img src="cat2_image8.jpg" alt="Category 1 Image 8">
+                <div class="product-info">
+                    <h3>Makeup Brushes</h3>
+                    <p>Real Techniques Everyday Essentials Makeup Brush Set (Set Of 5)  (Pack of 5)</p>
+                    <p class="price">₹283</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function viewProductDetails(name, imageUrl, description, price, features) {
+            const params = new URLSearchParams({
+                name: name,
+                imageUrl: imageUrl,
+                description: description,
+                price: price,
+                features: JSON.stringify(features)
+            });
+            window.location.href = 'product-details.html?' + params.toString();
+        }
+    </script>
+</body>
+</html>
+         
